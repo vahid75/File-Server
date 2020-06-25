@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("upload-file/", views.upload_file, name="upload_file"),
+    path("register/", views.register_via_ip, name="register_via_ip"),
+    path("home/", views.home, name="home"),
 ]
+
+
+
+

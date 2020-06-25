@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% block body%}
+
+<!-- <a href="{% url 'upload_file' %}">
+<div style="background-color: rgb(200, 255, 0);height: 50vh;">
+    <span style="padding:11px">
+        <h1>2w</h1>
+    </span>
+     
+    
+</div>
+</a>
+
+<a href="/download/" class="link">
+    <div style="background-color:black;height: 50vh;">      
+            
+        
+    </div>
+    </a> -->
+    
+    <a href="{% url 'upload_file' %}" class="link">
+        <button class="btn btn-lg btn-info mr-5 ml-5" target='/download/'>upload file</button>
+    </a> 
+    <hr>
+   <a href="/download/" class="link">
+        <button class="btn btn-lg btn-info mr-5 ml-5" target='/download/'>download file</button>
+    </a> 
+    <br>
+    <br>
+    <small> your private ip address : {{ip_address}}.</small> <br>
+    {% endblock body%}
