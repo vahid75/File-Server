@@ -5,3 +5,5 @@ db.sqlite3
 .venv
 venv
 env
+client_addresses.txt
+permited_client_ips.txt
