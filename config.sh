@@ -1,11 +1,7 @@
 sudo apt install python3 nginx
 python_path=$(which python3)
-mkdir file_server/
-cd file_server/
 virtualenv .venv -p $python_path
 source .venv/bin/activate
-#git clone pytohn project
-#cd pytohn project  
 pip install -r requierments.txt
 touch .env
 echo "export FILE_SERVER_PATH='/home/vahid/file-server/'" > .env
