@@ -5,6 +5,7 @@ source .venv/bin/activate
 pip install -r requierments.txt
 touch .env
 echo "export FILE_SERVER_PATH='/home/vahid/file-server/'" > .env
+mkdir /home/vahid/file-server/
 python3 .ask_username.py
 source .env
 sudo touch /etc/nginx/sites-available/file-server
