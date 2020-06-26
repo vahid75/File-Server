@@ -33,7 +33,14 @@ get the project from this repository. move to the project root direcotory and ru
     ```source config.sh```
 
 it will install the appropriate packages ,  install virual environment with python packages. then a prompt appeares that requires the user's name that every time she logs in to ubuntu with that.if it corrects create nginx server blocks , put environment variables in .env file.
-next and final step is to run the run.py that acts as an entrypoint. it populates nginx server blocks with appropriate data  , migrate the database and run the django server.
+
+Next and final step is 
+
+    
+    python3 run.py
+
+    
+that acts as an entrypoint. it populates nginx server blocks with appropriate data  , migrate the database and run the django server.
 now every device is accecible throgh the host private ip address as url.to get its value see `host_ip_address.txt` file.
 
 Note: to access other devices , put their ip addresses in permited_client_ips.txt file. like this:
@@ -44,6 +51,8 @@ Note: to access other devices , put their ip addresses in permited_client_ips.tx
     192.168.1.11
 
 ```
+
+
 Note: in ` config.sh` the varible `FILE_SERVER_PATH` points to the location where all files recieves from clients stores here. change it to every location you want. also if you change that location you should this line to the same value. `mkdir /home/vahid/file-server/`
 enjoy it :))).
 
