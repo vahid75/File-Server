@@ -1,3 +1,7 @@
 db.sqlite3
 **/__pycache__/**
 .vscode/
+.env
+.venv
+venv
+env
