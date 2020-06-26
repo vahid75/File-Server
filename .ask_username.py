@@ -8,4 +8,5 @@ def ask_username():
                 return input_user
 
 
-print(ask_username())
+with open('.env' , 'a+') as env_file:
+    env_file.write(f'export FILE_SERVER_OWNER="{ask_username()}"')
