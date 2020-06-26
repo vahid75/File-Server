@@ -23,9 +23,12 @@ TEMPALTE_DIR = os.path.join(BASE_DIR , 'templates/')
 SECRET_KEY = '-v^_blvn@9gy3)^+_28&wklxnzpy(jp!cimj(e_!y-_(_zz7rg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.environ.get('DEBUG', True))
 
-ALLOWED_HOSTS = ['*']
+if os.environ.get("ALLOWED_HOSTS", False):
+    ALLOWED_HOSTS = os.environ["ALLOWED_HOSTS"].split(",")
+else:
+    ALLOWED_HOSTS = []
 
 
 # Application definition

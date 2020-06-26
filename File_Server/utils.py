@@ -1,20 +1,23 @@
 from django.conf import settings
-
+import os
 
 
 def saving_file(file_object):
     input_file_name = file_object.name
-    file_name , file_extenstion = naming_file(input_file_name)    
-
+    file_name , file_extenstion = naming_file(input_file_name)  
+    file_server_path = os.environ.get('FILE_SERVER_PATH')
+    if not file_server_path:
+        raise ValueError('You should specify the directory path you wish to store files in it.')
+    
     if file_extenstion:
         with open(
-            f"/home/vahid/file-server/{file_name}.{file_extenstion}", "wb"
+            f"{file_server_path}{file_name}.{file_extenstion}", "wb"
         ) as des_file:
             for chunk in file_object.chunks():
                 des_file.write(chunk)
     else:
         with open(
-            f"/home/vahid/file-server/{file_name}", "wb"
+            f"{file_server_path}{file_name}", "wb"
         ) as des_file:
             for chunk in file_object.chunks():
                 des_file.write(chunk)
